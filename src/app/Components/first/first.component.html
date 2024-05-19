@@ -25,7 +25,8 @@
             <div class="keywords">
               <span *ngFor="let keyword of topic.keywords; let i = index" class="keyword" [class.yellow]="i % 3 === 0" [class.green]="i % 3 === 1" [class.red]="i % 3 === 2">{{ keyword }}</span>
               
-              <button class="write" (click)="openEditor()">Write></button>
+              <button class="write" (click)="openEditor(topic.topic, topic.keywords)">Write></button>
+
               <div class="topic-header">
                 <button class="delete-button" (click)="deleteTopic(topic)">Delete</button>
               </div>
@@ -34,4 +35,4 @@
           </div>
           
   </div>
-  <app-third *ngIf="editorVisible" (close)="closeEditor()"></app-third>
+  <app-third *ngIf="editorVisible" [topic]="selectedTopic" [keywords]="selectedKeywords" (close)="closeEditor()"></app-third>

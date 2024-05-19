@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent {
+  
   selectedCategory: string = 'All';
   showForm: boolean = false;
   editorVisible: boolean = false;
   customTopics: { topic: string, keywords: string[] }[] = []; // Array to store custom topics and keywords
+  selectedTopic: string = ''; // Add selectedTopic property
+  selectedKeywords: string[] = [];  // Array to store custom topics and keywords
 
   selectCategory(category: string) {
     this.selectedCategory = category;
@@ -34,9 +37,12 @@ export class FirstComponent {
   deleteTopic(topicToDelete: { topic: string, keywords: string[] }) {
     this.customTopics = this.customTopics.filter(topic => topic !== topicToDelete);
   }
-  openEditor() {
-    this.editorVisible = true;
-  }
+  openEditor(topic: string, keywords: string[]) {
+  this.selectedTopic = topic;
+  this.selectedKeywords = keywords;
+  this.editorVisible = true;
+}
+
 
   closeEditor() {
     this.editorVisible = false;

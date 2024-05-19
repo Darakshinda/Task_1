@@ -1,37 +1,35 @@
 <div class="blog-editor">
   <div>
-      <label for="tone">Select Tone:</label>
-      <select id="tone" [(ngModel)]="selectedTone">
-          <option value="formal">Formal</option>
-          <option value="casual">Casual</option>
-          <option value="informative">Informative</option>
-          <option value="persuasive">Persuasive</option>
-      </select>
-      <button (click)="generateContent()">Generate</button>
+    <label for="tone">Select Tone:</label>
+    <select id="tone" [(ngModel)]="selectedTone">
+      <option value="formal">Formal</option>
+      <option value="casual">Casual</option>
+      <option value="informative">Informative</option>
+      <option value="persuasive">Persuasive</option>
+    </select>
+    <button (click)="generateContent()">Generate</button>
   </div>
+
   <textarea [(ngModel)]="blogContent" (keydown)="handleKeydown($event)" rows="10" cols="50"></textarea>
 
   <input type="file" (change)="onImageUpload($event)" id="fileInput">
   <label for="fileInput"></label>
 
   <div class="image-container">
-      <div *ngFor="let img of images; let i = index" class="image-item" [class.selected]="img.selected" (click)="toggleImageSelection(i)">
-          <img [src]="img.dataUrl" alt="Uploaded image">
-      </div>
+    <div *ngFor="let img of images; let i = index" class="image-item" [class.selected]="img.selected" (click)="toggleImageSelection(i)">
+      <img [src]="img.dataUrl" alt="Uploaded image">
+    </div>
   </div>
 
   <button (click)="deleteSelectedImages()" class="delete-button">Delete</button>
-<button (click)="closeEditor()">Close</button>
+  <button (click)="closeEditor()">Close</button>
 
-
-  <!-- Modal for confirmation -->
   <div class="modal" [class.show-modal]="showModal">
     <div class="modal-content">
       <p>Are you sure you want to delete?</p>
       <div>
         <button (click)="deleteImageConfirmed()" class="yes-button">Yes</button>
-<button (click)="cancelDelete()" class="no-button">No</button>
-
+        <button (click)="cancelDelete()" class="no-button">No</button>
       </div>
     </div>
   </div>
