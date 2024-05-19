@@ -1,0 +1,37 @@
+<div class="top">
+    <h5>Categories</h5>
+  </div>
+  <div class="slide">
+    <h6 [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')">All</h6>
+    <h6 [class.active]="selectedCategory === 'Custom'" (click)="selectCategory('Custom')">Custom</h6>
+    <h6 [class.active]="selectedCategory === 'ICP'" (click)="selectCategory('ICP')">ICP</h6>
+    <h6 [class.active]="selectedCategory === 'Mission'" (click)="selectCategory('Mission')">Mission</h6>
+    <h6 [class.active]="selectedCategory === 'Product'" (click)="selectCategory('Product')">Product</h6>
+  
+    <button class="add" (click)="toggleForm()">Add Topic></button>
+  </div>
+  
+  <app-second *ngIf="showForm" (topicAdded)="addTopic($event.topic, $event.keywords)"></app-second>
+
+
+  <div *ngIf="selectedCategory === 'Custom'">
+    <div class="heading">
+        <h6>Recommended Topics</h6>
+    </div>
+    
+        <div *ngFor="let topic of customTopics" class="topic-container">
+           
+            <h6>{{ topic.topic }}</h6>
+            <div class="keywords">
+              <span *ngFor="let keyword of topic.keywords; let i = index" class="keyword" [class.yellow]="i % 3 === 0" [class.green]="i % 3 === 1" [class.red]="i % 3 === 2">{{ keyword }}</span>
+              
+              <button class="write" (click)="openEditor()">Write></button>
+              <div class="topic-header">
+                <button class="delete-button" (click)="deleteTopic(topic)">Delete</button>
+              </div>
+          </div>
+          
+          </div>
+          
+  </div>
+  <app-third *ngIf="editorVisible" (close)="closeEditor()"></app-third>

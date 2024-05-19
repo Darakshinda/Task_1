@@ -1,0 +1,12 @@
+<form [formGroup]="addTopicForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="topicName">Topic Name:</label>
+      <input id="topicName" formControlName="topicName" type="text">
+    </div>
+    <div>
+      <label for="keywords">Keywords:</label>
+      <input id="keywords" formControlName="keywords" type="text">
+    </div>
+    <button type="submit">Add Topic</button>
+  </form>
+  

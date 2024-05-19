@@ -1,0 +1,123 @@
+.blog-editor {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.blog-editor div {
+  margin-bottom: 20px;
+}
+
+.blog-editor label {
+  font-weight: bold;
+}
+
+.blog-editor select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.blog-editor button {
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+
+.blog-editor textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.blog-editor input[type="file"] {
+  margin-top: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.blog-editor .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.blog-editor .image-item {
+  flex: 0 0 calc(33.33% - 10px); /* Set maximum width for 3 items in a row */
+  max-width: calc(33.33% - 10px); /* Set maximum width for 3 items in a row */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-editor .image-item img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.blog-editor .image-item.selected img {
+  border: 1px solid black;
+}
+
+.blog-editor .image-item div {
+  text-align: center;
+  margin-bottom: 5px; /* Space between the image and the name */
+}
+
+.blog-editor .image-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.blog-editor button.delete-button {
+  margin-right: 20px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.show-modal {
+  display: block;
+}
+.modal-content button.no-button {
+  margin-left: 20px;
+}

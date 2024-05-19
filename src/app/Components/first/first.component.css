@@ -1,0 +1,139 @@
+.top {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin: 50px 100px 10px 100px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.slide {
+  display: flex;
+  padding: 10px;
+  margin-left: 150px;
+  gap: 60px;
+}
+
+.slide h6 {
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+.slide h6.active {
+  color: #fe5e31;
+  font-weight: bold;
+}
+
+.slide h6.active::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: -10px;
+  right: -10px;
+  height: 3px;
+  background-color: #fe5e31; /* Bottom line color for active category */
+}
+
+.add {
+  margin-left: 600px;
+  background-color: #fe5e31;
+  color: white;
+  border: none;
+  height: 35px;
+  width: 100px;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between keywords */
+  margin-top: 10px; /* Space between topic title and keywords */
+}
+
+.keyword {
+  padding: 2px 10px;
+  border-radius: 9px;
+  border: 1px solid #dee2e6;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+  font-size: 15px;
+  height: 25px;
+  line-height: 25px; /* Adjust line height to center text vertically */
+  vertical-align: middle; /* Ensure vertical alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yellow {
+  border-color: #f6e1a1;
+  color: #f6e1a1;
+  background-color: #fdf8e7;
+}
+
+.green {
+  border-color: #40d6ae;
+  color: #40d6ae;
+  background-color: #e5faf5;
+}
+
+.red {
+  border-color: #f07d7d;
+  color: #f07d7d;
+  background-color: #fee2e2;
+}
+.heading {
+  padding-left: 15px;
+  padding-top: 6px;
+  margin: -1px 100px 0 100px;
+  border: 1px solid #dee2e6;
+  height: 35px;
+}
+
+.write {
+  position: absolute;
+  top: 20px;
+  right: 280px;
+  background-color: #fe5e31;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 65px;
+  height: 30px;
+  font-weight: bold;
+}
+
+.topic-container {
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  padding: 10px;
+  margin: -1px 100px 0 100px;
+  padding-right: 60px;
+  position: relative;
+}
+
+.topic-container:last-child {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 10px;
+}
+.delete-button {
+  background-color: red;
+  position: absolute;
+  top: 20px;
+  right: 200px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 65px;
+  height: 30px;
+  font-weight: bold;
+}
